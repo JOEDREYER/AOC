@@ -24,25 +24,26 @@ def rearrange
     numbers.delete_at(1)
     numbers.delete_at(2)
     numbers.map(&:to_i)
+    p numbers
   end
 end
 
 # p rearrange
 
-# rearrange.each do |instruction|
-#   # for each instruction: pop(index 0) from (index 1) and push into (index 2)
-#   instruction[0].times do
-#     move = STACK[instruction[1]].pop
-#     STACK[instruction[2]].push(move)
-#   end
-# end
+rearrange.each do |instruction|
+  # for each instruction: pop(index 0) from (index 1) and push into (index 2)
+  instruction[0].times do
+    move = STACK[instruction[1]].pop
+    STACK[instruction[2]].push(move)
+  end
+end
 
-# result = ""
+result = ""
 
-# STACK.each do |stack|
-#   letter = stack[1].last
-#   result += letter
-# end
+STACK.each do |stack|
+  letter = stack[1].last
+  result += letter
+end
 
 # p result
 
